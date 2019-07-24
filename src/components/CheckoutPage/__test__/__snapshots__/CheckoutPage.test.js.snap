@@ -2,6 +2,14 @@
 
 exports[`CheckoutPage render should render to match snapshot 1`] = `
 <div>
-  Checkout page
+  <h1>
+    Checkout page
+  </h1>
+  <div>
+    ProductsPanel
+  </div>
+  <div>
+    CheckoutPanel
+  </div>
 </div>
 `;

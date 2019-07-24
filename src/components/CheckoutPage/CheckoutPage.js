@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import ProductsPanel from '../ProductsPanel';
+import CheckoutPanel from '../CheckoutPanel';
 
 export default class CheckoutPage extends Component {
     constructor(props) {
@@ -18,7 +20,15 @@ export default class CheckoutPage extends Component {
 
     render() {
         return (
-            <div>Checkout page</div>
+            <div>
+                <h1>Checkout page</h1>
+                <ProductsPanel 
+                    products = {this.state.products}
+                />
+                <CheckoutPanel 
+                    checkoutProducts = {this.state.checkoutProducts}
+                />
+            </div>
         );
     }
 
