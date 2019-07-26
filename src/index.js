@@ -1,19 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CheckoutPage from './components/CheckoutPage';
-import * as api from './api/api'
+import * as productService from './service/productService';
 import * as serviceWorker from './serviceWorker';
 
-const fetchDataForCheckoutPage = (setProducts, setPromotionCodes) => {
-    api.fetchProducts().then(
+const fetchDataForCheckoutPage = (setProducts) => {
+    productService.fetchProducts().then(
         response => {
             setProducts(response);
-        }
-    );
-
-    api.fetchPromotionCodes().then(
-        response => {
-            setPromotionCodes(response);
         }
     );
 }

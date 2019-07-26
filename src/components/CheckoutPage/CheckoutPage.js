@@ -15,7 +15,7 @@ export default class CheckoutPage extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchDataForCheckoutPage(this.setProducts, this.setPromotionCodes);
+        this.props.fetchDataForCheckoutPage(this.setProducts);
     }
 
     render() {
@@ -35,10 +35,6 @@ export default class CheckoutPage extends Component {
     setProducts = (products) => {
         this.setState({products})
     };
-
-    setPromotionCodes = (promotionCodes) => {
-        this.setState({promotionCodes})
-    }
 }
 
 CheckoutPage.propTypes = {
