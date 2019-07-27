@@ -2,6 +2,23 @@
 
 exports[`ProductsPanel render should render to match snapshot 1`] = `
 <div>
-  ProductsPanel
+  <h2>
+    ProductsPanel
+  </h2>
+  <div
+    className="promotion-code-panel-wrapper"
+  >
+    <span>
+      Promotion Code:
+    </span>
+    <input />
+    <button
+      className="code-submit"
+      onClick={[Function]}
+    >
+      Submit Code
+    </button>
+    <span />
+  </div>
 </div>
 `;

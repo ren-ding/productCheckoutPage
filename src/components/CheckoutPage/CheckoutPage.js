@@ -8,8 +8,8 @@ export default class CheckoutPage extends Component {
         super(props);
         this.state = {
             products: [],
-            promotionCodes: [],
-            inputPromotionCode: "",
+            promotionCode: "",
+            codeMessage: "",
             checkoutProducts: []
         }
     }
@@ -24,6 +24,8 @@ export default class CheckoutPage extends Component {
                 <h1>Checkout page</h1>
                 <ProductsPanel 
                     products = {this.state.products}
+                    submitPromotionCode = {this.submitPromotionCode}
+                    codeMessage = {this.state.codeMessage}
                 />
                 <CheckoutPanel 
                     checkoutProducts = {this.state.checkoutProducts}
@@ -35,8 +37,21 @@ export default class CheckoutPage extends Component {
     setProducts = (products) => {
         this.setState({products})
     };
+
+    submitPromotionCode = (code) => {
+        this.props.submitPromotionCode(code, this.onSuccessPromotionCode, this.onFailPromotionCode);
+    }
+
+    onSuccessPromotionCode = (codeInfo) => {
+        this.setState({promotionCode: codeInfo.code, codeMessage:codeInfo.description});
+    }
+
+    onFailPromotionCode = () => {
+        this.setState({codeMessage: "Invalid promotion code"});
+    }
 }
 
 CheckoutPage.propTypes = {
-    fetchDataForCheckoutPage: PropTypes.func.isRequired
+    fetchDataForCheckoutPage: PropTypes.func.isRequired,
+    submitPromotionCode: PropTypes.func.isRequired
 };

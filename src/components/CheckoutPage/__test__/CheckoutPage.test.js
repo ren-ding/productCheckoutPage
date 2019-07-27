@@ -12,7 +12,8 @@ describe('CheckoutPage', ()=> {
 
     beforeEach(()=> {
         props = {
-            fetchDataForCheckoutPage: () => {}
+            fetchDataForCheckoutPage: () => {},
+            submitPromotionCode: () => {}
         }
 
         checkoutPage = () => shallow(<CheckoutPage {...props} />, { lifecycleExperimental: true });        

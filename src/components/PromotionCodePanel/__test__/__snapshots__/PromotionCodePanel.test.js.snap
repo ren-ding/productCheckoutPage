@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PromotionCodePanel render should render to match snapshot 1`] = `
+<div
+  className="promotion-code-panel-wrapper"
+>
+  <span>
+    Promotion Code:
+  </span>
+  <input />
+  <button
+    className="code-submit"
+    onClick={[Function]}
+  >
+    Submit Code
+  </button>
+  <span>
+    
+  </span>
+</div>
+`;

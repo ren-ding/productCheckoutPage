@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CheckoutPage from './components/CheckoutPage';
 import * as productService from './service/productService';
+import * as promotionCodeService from './service/promotionCodeService';
 import * as serviceWorker from './serviceWorker';
 
 const fetchDataForCheckoutPage = (setProducts) => {
@@ -12,7 +13,17 @@ const fetchDataForCheckoutPage = (setProducts) => {
     );
 }
 
-ReactDOM.render(<CheckoutPage fetchDataForCheckoutPage = {fetchDataForCheckoutPage}/>, document.getElementById('root'));
+const submitPromotionCode = (code, onSuccess, onFail) => {
+    const codeInfo = promotionCodeService.getPromotionCodeByCode(code);
+    if(codeInfo) onSuccess(codeInfo);
+    else onFail();
+}
+
+ReactDOM.render(<CheckoutPage 
+                    fetchDataForCheckoutPage = {fetchDataForCheckoutPage}
+                    submitPromotionCode = {submitPromotionCode}
+                />,
+document.getElementById('root'));
 
 
 
