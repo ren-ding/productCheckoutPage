@@ -5,27 +5,27 @@ exports[`CheckoutPage render should render to match snapshot 1`] = `
   <h1>
     Checkout page
   </h1>
+  <div
+    className="promotion-code-panel-wrapper"
+  >
+    <span>
+      Promotion Code:
+    </span>
+    <input />
+    <button
+      className="code-submit"
+      onClick={[Function]}
+    >
+      Submit Code
+    </button>
+    <span>
+      
+    </span>
+  </div>
   <div>
     <h2>
-      ProductsPanel
+      ProductListPanel
     </h2>
-    <div
-      className="promotion-code-panel-wrapper"
-    >
-      <span>
-        Promotion Code:
-      </span>
-      <input />
-      <button
-        className="code-submit"
-        onClick={[Function]}
-      >
-        Submit Code
-      </button>
-      <span>
-        
-      </span>
-    </div>
   </div>
   <div>
     CheckoutPanel

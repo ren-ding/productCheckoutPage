@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import ProductsPanel from '../ProductsPanel';
+import PromotionCodePanel from '../PromotionCodePanel';
+import ProductListPanel from '../ProductListPanel';
 import CheckoutPanel from '../CheckoutPanel';
 
 export default class CheckoutPage extends Component {
@@ -22,10 +23,12 @@ export default class CheckoutPage extends Component {
         return (
             <div>
                 <h1>Checkout page</h1>
-                <ProductsPanel 
-                    products = {this.state.products}
+                <PromotionCodePanel
                     submitPromotionCode = {this.submitPromotionCode}
                     codeMessage = {this.state.codeMessage}
+                />
+                <ProductListPanel 
+                    products = {this.state.products}
                 />
                 <CheckoutPanel 
                     checkoutProducts = {this.state.checkoutProducts}
