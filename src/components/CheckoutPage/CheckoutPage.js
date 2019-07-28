@@ -33,6 +33,7 @@ export default class CheckoutPage extends Component {
                 />
                 <CheckoutPanel 
                     checkoutProducts = {this.state.checkoutProducts}
+                    removeFromCheckout = {this.removeFromCheckout}
                 />
             </div>
         );
@@ -71,6 +72,10 @@ export default class CheckoutPage extends Component {
                                {...this.state.checkoutProducts[index], quantity: quantity+1},
                                ...this.state.checkoutProducts.slice(index+1)]
         });
+    }
+
+    removeFromCheckout = (productId) => {
+
     }
 }
 

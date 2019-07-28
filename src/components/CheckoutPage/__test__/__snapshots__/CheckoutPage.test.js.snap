@@ -29,8 +29,12 @@ exports[`CheckoutPage render should render to match snapshot 1`] = `
       ProductListPanel
     </h2>
   </div>
-  <div>
-    CheckoutPanel
+  <div
+    className="checkout-panel-wrapper"
+  >
+    <h2>
+      CheckoutPanel
+    </h2>
   </div>
 </div>
 `;

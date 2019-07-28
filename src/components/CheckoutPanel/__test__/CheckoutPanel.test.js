@@ -12,7 +12,8 @@ describe('CheckoutPanel', ()=> {
 
     beforeEach(()=> {
         props = {
-            checkoutProducts: []
+            checkoutProducts: [],
+            removeFromCheckout: ()=>{}
         }
 
         checkoutPanel = () => shallow(<CheckoutPanel {...props} />, { lifecycleExperimental: true });        

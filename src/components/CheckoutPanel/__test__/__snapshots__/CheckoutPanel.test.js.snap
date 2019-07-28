@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CheckoutPanel render should render to match snapshot 1`] = `
-<div>
-  CheckoutPanel
+<div
+  className="checkout-panel-wrapper"
+>
+  <h2>
+    CheckoutPanel
+  </h2>
 </div>
 `;
