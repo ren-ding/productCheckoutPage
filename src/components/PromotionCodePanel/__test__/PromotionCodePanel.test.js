@@ -27,7 +27,7 @@ describe('PromotionCodePanel', ()=> {
     });
 
     describe('click submit code button', ()=> {
-        it('should call submitPromotionCode event handler', ()=> {
+        it('should call submitPromotionCode once', ()=> {
             const mockSubmitPromotionCode = jest.fn();
             props = {
                 submitPromotionCode: mockSubmitPromotionCode,
@@ -39,6 +39,7 @@ describe('PromotionCodePanel', ()=> {
             //shallow has no facility to mock this up
             panel.find('.code-submit').simulate('click');
             expect(mockSubmitPromotionCode).toHaveBeenCalled();
+            expect(mockSubmitPromotionCode.mock.calls.length).toBe(1);
         });
     });
 });

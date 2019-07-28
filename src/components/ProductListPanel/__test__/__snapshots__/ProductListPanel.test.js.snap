@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProductListPanel render should render to match snapshot 1`] = `
-<div>
+<div
+  className="productlist-wrapper"
+>
   <h2>
     ProductListPanel
   </h2>

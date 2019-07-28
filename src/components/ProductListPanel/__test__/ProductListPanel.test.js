@@ -12,7 +12,8 @@ describe('ProductListPanel', ()=> {
 
     beforeEach(()=> {
         props = {
-            products: []
+            products: [],
+            addToCheckout: ()=> {}
         }
 
         productListPanel = () => shallow(<ProductListPanel {...props} />, { lifecycleExperimental: true });        

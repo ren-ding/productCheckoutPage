@@ -29,6 +29,7 @@ export default class CheckoutPage extends Component {
                 />
                 <ProductListPanel 
                     products = {this.state.products}
+                    addToCheckout= {this.addToCheckout}
                 />
                 <CheckoutPanel 
                     checkoutProducts = {this.state.checkoutProducts}
@@ -51,6 +52,25 @@ export default class CheckoutPage extends Component {
 
     onFailPromotionCode = () => {
         this.setState({codeMessage: "Invalid promotion code"});
+    }
+
+    addToCheckout = (productId) => {
+        const index = this.state.checkoutProducts.findIndex(p=> p.productId === productId);
+        if(index === -1) {
+            //this product does not exist in the checkoutlist, add a new one
+            this.setState({
+                checkoutProducts: [...this.state.checkoutProducts, {productId: productId, quantity:1}]
+            });
+            return;
+        }
+
+        //this product exist in the checkoutlist, increase quantity
+        const quantity = this.state.checkoutProducts[index].quantity;
+        this.setState({
+            checkoutProducts: [...this.state.checkoutProducts.slice(0,index),
+                               {...this.state.checkoutProducts[index], quantity: quantity+1},
+                               ...this.state.checkoutProducts.slice(index+1)]
+        });
     }
 }
 
