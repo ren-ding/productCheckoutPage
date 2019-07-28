@@ -66,4 +66,14 @@ describe('CheckoutPage', ()=> {
         });
 
     });
+
+    describe('trigger remove product from checkoutlist', ()=> {
+        it('should remove the product from checkoutlist', ()=> {
+            const page = checkoutPage();
+            page.setState({checkoutProducts: [ { productId: 'wf', quantity: 2 }, { productId: 'docgen', quantity: 1 } ]});
+            page.instance().removeFromCheckout('wf');
+            expect(page.state('checkoutProducts')).toStrictEqual([ { productId: 'docgen', quantity: 1 }]);
+        });
+
+    });
 });

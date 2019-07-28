@@ -75,7 +75,13 @@ export default class CheckoutPage extends Component {
     }
 
     removeFromCheckout = (productId) => {
-
+        const index = this.state.checkoutProducts.findIndex(p=> p.productId === productId);
+        if(index === -1) return;
+        
+        this.setState({
+            checkoutProducts: [...this.state.checkoutProducts.slice(0,index),
+                                ...this.state.checkoutProducts.slice(index+1)]
+        });
     }
 }
 
