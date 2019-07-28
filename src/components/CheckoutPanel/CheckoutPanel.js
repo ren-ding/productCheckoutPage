@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import CheckoutProdctSegment from '../CheckoutProductSegment';
+import CheckoutSummarySegment from '../CheckoutSummarySegment';
 
 export default class CheckoutPanel extends Component {
     render() {
@@ -8,6 +9,7 @@ export default class CheckoutPanel extends Component {
             <div className='checkout-panel-wrapper'>
                 <h2>CheckoutPanel</h2>
                 {this.props.checkoutProducts.map(this.renderCheckoutProductComponent)}
+                {this.renderCheckoutSummaryComponent()}
             </div>
         );
     }
@@ -19,9 +21,18 @@ export default class CheckoutPanel extends Component {
             removeFromCheckout={this.props.removeFromCheckout}
         />
     );
+
+    renderCheckoutSummaryComponent = () => (
+        <CheckoutSummarySegment
+            code = {this.props.code}
+            total = {this.props.total}
+        />
+    );
 }
 
 CheckoutPanel.propTypes = {
     checkoutProducts: PropTypes.array.isRequired,
-    removeFromCheckout: PropTypes.func.isRequired
+    removeFromCheckout: PropTypes.func.isRequired,
+    code: PropTypes.string.isRequired,
+    total: PropTypes.number.isRequired
 };

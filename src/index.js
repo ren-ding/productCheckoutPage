@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import CheckoutPage from './components/CheckoutPage';
 import * as productService from './service/productService';
 import * as promotionCodeService from './service/promotionCodeService';
+import * as checkoutService from './service/checkoutService';
 import * as serviceWorker from './serviceWorker';
 
 const fetchDataForCheckoutPage = (setProducts) => {
@@ -19,14 +20,14 @@ const submitPromotionCode = (code, onSuccess, onFail) => {
     else onFail();
 }
 
+const calculateTotal = (products, code) => checkoutService.calculateTotal(products, code);
+
 ReactDOM.render(<CheckoutPage 
                     fetchDataForCheckoutPage = {fetchDataForCheckoutPage}
                     submitPromotionCode = {submitPromotionCode}
+                    calculateTotal = {calculateTotal}
                 />,
 document.getElementById('root'));
-
-
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

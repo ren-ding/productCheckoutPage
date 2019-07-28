@@ -35,6 +35,20 @@ exports[`CheckoutPage render should render to match snapshot 1`] = `
     <h2>
       CheckoutPanel
     </h2>
+    <div
+      className="checkout-summary-wrapper"
+    >
+      <span>
+        Promotion Code: 
+        
+          
+      </span>
+      <span>
+        Total Price: 
+        0.00
+          
+      </span>
+    </div>
   </div>
 </div>
 `;

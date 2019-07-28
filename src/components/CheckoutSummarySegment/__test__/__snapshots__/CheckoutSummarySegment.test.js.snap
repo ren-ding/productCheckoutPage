@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckoutSummarySegment render should render to match snapshot 1`] = `
+<div
+  className="checkout-summary-wrapper"
+>
+  <span>
+    Promotion Code: 
+    YYGWKJD
+      
+  </span>
+  <span>
+    Total Price: 
+    200.00
+      
+  </span>
+</div>
+`;

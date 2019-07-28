@@ -11,7 +11,8 @@ export default class CheckoutPage extends Component {
             products: [],
             promotionCode: "",
             codeMessage: "",
-            checkoutProducts: []
+            checkoutProducts: [],
+            total: 0
         }
     }
 
@@ -34,6 +35,8 @@ export default class CheckoutPage extends Component {
                 <CheckoutPanel 
                     checkoutProducts = {this.state.checkoutProducts}
                     removeFromCheckout = {this.removeFromCheckout}
+                    code = {this.state.promotionCode}
+                    total = {this.state.total}
                 />
             </div>
         );
@@ -48,7 +51,10 @@ export default class CheckoutPage extends Component {
     }
 
     onSuccessPromotionCode = (codeInfo) => {
-        this.setState({promotionCode: codeInfo.code, codeMessage:codeInfo.description});
+        this.setState({promotionCode: codeInfo.code, codeMessage:codeInfo.description},
+            ()=> {
+                this.setState({total: this.calculateTotal()});
+            });
     }
 
     onFailPromotionCode = () => {
@@ -60,7 +66,9 @@ export default class CheckoutPage extends Component {
         if(index === -1) {
             //this product does not exist in the checkoutlist, add a new one
             this.setState({
-                checkoutProducts: [...this.state.checkoutProducts, {productId: productId, quantity:1}]
+                checkoutProducts: [...this.state.checkoutProducts, {productId: productId, quantity:1}],
+            }, () => {
+                this.setState({total: this.calculateTotal()});
             });
             return;
         }
@@ -71,6 +79,8 @@ export default class CheckoutPage extends Component {
             checkoutProducts: [...this.state.checkoutProducts.slice(0,index),
                                {...this.state.checkoutProducts[index], quantity: quantity+1},
                                ...this.state.checkoutProducts.slice(index+1)]
+        }, ()=> {
+            this.setState({total: this.calculateTotal()});
         });
     }
 
@@ -81,11 +91,17 @@ export default class CheckoutPage extends Component {
         this.setState({
             checkoutProducts: [...this.state.checkoutProducts.slice(0,index),
                                 ...this.state.checkoutProducts.slice(index+1)]
+        }, () => {
+            this.setState({total: this.calculateTotal()});
         });
     }
+
+    calculateTotal = () => 
+        this.props.calculateTotal(this.state.checkoutProducts, this.state.promotionCode);
 }
 
 CheckoutPage.propTypes = {
     fetchDataForCheckoutPage: PropTypes.func.isRequired,
-    submitPromotionCode: PropTypes.func.isRequired
+    submitPromotionCode: PropTypes.func.isRequired,
+    calculateTotal: PropTypes.func.isRequired
 };
