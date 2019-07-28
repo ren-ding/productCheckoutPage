@@ -42,16 +42,11 @@ exports[`CheckoutPanel render should render to match snapshot 1`] = `
       <div
         className="checkout-summary-wrapper"
       >
-        <span>
-          Promotion Code: 
-          
-            
-        </span>
-        <span>
+        <div>
           Total Price: 
           399.00
             
-        </span>
+        </div>
       </div>
     </div>
   </div>

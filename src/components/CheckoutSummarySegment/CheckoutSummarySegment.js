@@ -5,10 +5,17 @@ export default class CheckoutSummarySegment extends Component {
     render() {
         return (
             <div className='checkout-summary-wrapper'>
-                <span>Promotion Code: {this.props.code}  </span>
-                <span>Total Price: {this.props.total.toFixed(2)}  </span>
+                {this.renderPromotionCode()}
+                <div>Total Price: {this.props.total.toFixed(2)}  </div>
             </div>
         );
+    }
+
+    renderPromotionCode = () => {
+        if(this.props.code)
+            return (
+                <div>Promotion Code: {this.props.code}  </div>
+            )
     }
 }
 

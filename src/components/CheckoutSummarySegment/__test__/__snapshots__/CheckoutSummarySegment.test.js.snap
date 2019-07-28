@@ -4,15 +4,15 @@ exports[`CheckoutSummarySegment render should render to match snapshot 1`] = `
 <div
   className="checkout-summary-wrapper"
 >
-  <span>
+  <div>
     Promotion Code: 
     YYGWKJD
       
-  </span>
-  <span>
+  </div>
+  <div>
     Total Price: 
     200.00
       
-  </span>
+  </div>
 </div>
 `;

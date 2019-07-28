@@ -31,22 +31,36 @@ export default class CheckoutPage extends Component {
                             submitPromotionCode = {this.submitPromotionCode}
                             codeMessage = {this.state.codeMessage}
                         />
-                        <ProductListPanel 
-                            products = {this.state.products}
-                            addToCheckout= {this.addToCheckout}
-                        />
+                        {this.renderProductListPanel()}
                     </div>
                     <div className="checkout-right-container">
-                        <CheckoutPanel 
-                            checkoutProducts = {this.state.checkoutProducts}
-                            removeFromCheckout = {this.removeFromCheckout}
-                            code = {this.state.promotionCode}
-                            total = {this.state.total}
-                        />
+                        {this.renderCheckoutPanel()}
                     </div>
                 </div>
             </div>
         );
+    }
+
+    renderCheckoutPanel = () => {
+        if(this.state.checkoutProducts.length > 0)
+            return (
+                <CheckoutPanel 
+                    checkoutProducts = {this.state.checkoutProducts}
+                    removeFromCheckout = {this.removeFromCheckout}
+                    code = {this.state.promotionCode}
+                    total = {this.state.total}
+                />
+            )
+    }
+
+    renderProductListPanel = () => {
+        if(this.state.products.length > 0)
+            return (
+                <ProductListPanel 
+                    products = {this.state.products}
+                    addToCheckout= {this.addToCheckout}
+                />
+            )
     }
 
     setProducts = (products) => {
