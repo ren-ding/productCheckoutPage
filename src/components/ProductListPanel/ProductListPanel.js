@@ -1,13 +1,25 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ProductSegment from '../ProductSegment';
+import './style/ProductListPanel.css';
 
 export default class ProductListPanel extends Component {
     render() {
         return (
             <div className='productlist-wrapper'>
-                <h2>ProductListPanel</h2>
-                {this.props.products.map(this.renderProductComponent)}
+                <table className="ui stripped table">
+                    <thead>
+                        <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th></th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            {this.props.products.map(this.renderProductComponent)}
+                        </tbody>
+                </table>
             </div>
         );
     }

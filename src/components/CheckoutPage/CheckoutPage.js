@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import PromotionCodePanel from '../PromotionCodePanel';
 import ProductListPanel from '../ProductListPanel';
 import CheckoutPanel from '../CheckoutPanel';
+import './style/CheckoutPage.css';
 
 export default class CheckoutPage extends Component {
     constructor(props) {
@@ -22,22 +23,28 @@ export default class CheckoutPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="ui container">
                 <h1>Checkout page</h1>
-                <PromotionCodePanel
-                    submitPromotionCode = {this.submitPromotionCode}
-                    codeMessage = {this.state.codeMessage}
-                />
-                <ProductListPanel 
-                    products = {this.state.products}
-                    addToCheckout= {this.addToCheckout}
-                />
-                <CheckoutPanel 
-                    checkoutProducts = {this.state.checkoutProducts}
-                    removeFromCheckout = {this.removeFromCheckout}
-                    code = {this.state.promotionCode}
-                    total = {this.state.total}
-                />
+                <div className="checkout-container">
+                    <div className="checkout-left-container">
+                        <PromotionCodePanel
+                            submitPromotionCode = {this.submitPromotionCode}
+                            codeMessage = {this.state.codeMessage}
+                        />
+                        <ProductListPanel 
+                            products = {this.state.products}
+                            addToCheckout= {this.addToCheckout}
+                        />
+                    </div>
+                    <div className="checkout-right-container">
+                        <CheckoutPanel 
+                            checkoutProducts = {this.state.checkoutProducts}
+                            removeFromCheckout = {this.removeFromCheckout}
+                            code = {this.state.promotionCode}
+                            total = {this.state.total}
+                        />
+                    </div>
+                </div>
             </div>
         );
     }

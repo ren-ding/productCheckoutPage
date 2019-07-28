@@ -7,9 +7,29 @@ export default class CheckoutPanel extends Component {
     render() {
         return (
             <div className='checkout-panel-wrapper'>
-                <h2>CheckoutPanel</h2>
-                {this.props.checkoutProducts.map(this.renderCheckoutProductComponent)}
-                {this.renderCheckoutSummaryComponent()}
+                <div className="ui card">
+                    <div className="content">
+                        <div className="header">Checkout</div>
+                    </div>
+                    <div className="content">
+                        <table className="ui very basic table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Quantity</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                                {this.props.checkoutProducts.map(this.renderCheckoutProductComponent)}     
+                            </tbody>
+                    </table>
+                        
+                    </div>
+                    <div className="extra content">
+                        {this.renderCheckoutSummaryComponent()}
+                    </div>
+                </div>
             </div>
         );
     }

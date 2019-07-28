@@ -4,22 +4,56 @@ exports[`CheckoutPanel render should render to match snapshot 1`] = `
 <div
   className="checkout-panel-wrapper"
 >
-  <h2>
-    CheckoutPanel
-  </h2>
   <div
-    className="checkout-summary-wrapper"
+    className="ui card"
   >
-    <span>
-      Promotion Code: 
-      
-        
-    </span>
-    <span>
-      Total Price: 
-      399.00
-        
-    </span>
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        Checkout
+      </div>
+    </div>
+    <div
+      className="content"
+    >
+      <table
+        className="ui very basic table"
+      >
+        <thead>
+          <tr>
+            <th>
+              Id
+            </th>
+            <th>
+              Quantity
+            </th>
+            <th />
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+    <div
+      className="extra content"
+    >
+      <div
+        className="checkout-summary-wrapper"
+      >
+        <span>
+          Promotion Code: 
+          
+            
+        </span>
+        <span>
+          Total Price: 
+          399.00
+            
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;

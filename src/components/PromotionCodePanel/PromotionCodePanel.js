@@ -5,16 +5,28 @@ export default class PromotionCodePanel extends Component {
     render() {
         let input;
         return (
-            <div className='promotion-code-panel-wrapper'>
-                <span>Promotion Code:</span>
-                <input ref = { node => {
+            <div className='ui action labeled input'>
+                <div className="ui label">
+                    Promotion Code:
+                </div>
+                <input type="text" ref = { node => {
                     input = node;
                 }}
                 />
-                <button className='code-submit' onClick={() => this.props.submitPromotionCode(input.value)}>Submit Code</button>
-                <span>{this.props.codeMessage}</span>
+                <button className='ui teal button code-submit' onClick={() => this.props.submitPromotionCode(input.value)}>Submit Code</button>
+                {this.renderCodeMessage()}
             </div>
         );
+    }
+
+    renderCodeMessage = () => {
+        if (this.props.codeMessage) {
+            return (
+                <div className='ui purple tag label'>
+                    {this.props.codeMessage}
+                </div>
+            );
+        }
     }
 }
 

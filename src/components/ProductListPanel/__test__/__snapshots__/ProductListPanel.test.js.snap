@@ -4,8 +4,24 @@ exports[`ProductListPanel render should render to match snapshot 1`] = `
 <div
   className="productlist-wrapper"
 >
-  <h2>
-    ProductListPanel
-  </h2>
+  <table
+    className="ui stripped table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Id
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Price
+        </th>
+        <th />
+      </tr>
+    </thead>
+    <tbody />
+  </table>
 </div>
 `;

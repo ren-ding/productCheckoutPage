@@ -1,24 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProductSegment render should render to match snapshot 1`] = `
-<div>
-  <span>
-    Id: 
-      
-  </span>
-  <span>
-    Name: 
-      
-  </span>
-  <span>
-    Price: 
-      
-  </span>
-  <button
-    className="add-product-to-checkout"
-    onClick={[Function]}
-  >
-    +
-  </button>
-</div>
+<tr>
+  <td />
+  <td />
+  <td />
+  <td>
+    <div
+      className="add-product-to-checkout ui primary button"
+      onClick={[Function]}
+    >
+      <i
+        className="shop icon"
+      />
+       Add to Cart
+    </div>
+  </td>
+</tr>
 `;

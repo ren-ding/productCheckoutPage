@@ -2,20 +2,21 @@
 
 exports[`PromotionCodePanel render should render to match snapshot 1`] = `
 <div
-  className="promotion-code-panel-wrapper"
+  className="ui action labeled input"
 >
-  <span>
+  <div
+    className="ui label"
+  >
     Promotion Code:
-  </span>
-  <input />
+  </div>
+  <input
+    type="text"
+  />
   <button
-    className="code-submit"
+    className="ui teal button code-submit"
     onClick={[Function]}
   >
     Submit Code
   </button>
-  <span>
-    
-  </span>
 </div>
 `;

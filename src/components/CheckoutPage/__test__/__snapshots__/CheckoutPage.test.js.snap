@@ -1,53 +1,118 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CheckoutPage render should render to match snapshot 1`] = `
-<div>
+<div
+  className="ui container"
+>
   <h1>
     Checkout page
   </h1>
   <div
-    className="promotion-code-panel-wrapper"
+    className="checkout-container"
   >
-    <span>
-      Promotion Code:
-    </span>
-    <input />
-    <button
-      className="code-submit"
-      onClick={[Function]}
-    >
-      Submit Code
-    </button>
-    <span>
-      
-    </span>
-  </div>
-  <div
-    className="productlist-wrapper"
-  >
-    <h2>
-      ProductListPanel
-    </h2>
-  </div>
-  <div
-    className="checkout-panel-wrapper"
-  >
-    <h2>
-      CheckoutPanel
-    </h2>
     <div
-      className="checkout-summary-wrapper"
+      className="checkout-left-container"
     >
-      <span>
-        Promotion Code: 
-        
-          
-      </span>
-      <span>
-        Total Price: 
-        0.00
-          
-      </span>
+      <div
+        className="ui action labeled input"
+      >
+        <div
+          className="ui label"
+        >
+          Promotion Code:
+        </div>
+        <input
+          type="text"
+        />
+        <button
+          className="ui teal button code-submit"
+          onClick={[Function]}
+        >
+          Submit Code
+        </button>
+      </div>
+      <div
+        className="productlist-wrapper"
+      >
+        <table
+          className="ui stripped table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Id
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Price
+              </th>
+              <th />
+            </tr>
+          </thead>
+          <tbody />
+        </table>
+      </div>
+    </div>
+    <div
+      className="checkout-right-container"
+    >
+      <div
+        className="checkout-panel-wrapper"
+      >
+        <div
+          className="ui card"
+        >
+          <div
+            className="content"
+          >
+            <div
+              className="header"
+            >
+              Checkout
+            </div>
+          </div>
+          <div
+            className="content"
+          >
+            <table
+              className="ui very basic table"
+            >
+              <thead>
+                <tr>
+                  <th>
+                    Id
+                  </th>
+                  <th>
+                    Quantity
+                  </th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody />
+            </table>
+          </div>
+          <div
+            className="extra content"
+          >
+            <div
+              className="checkout-summary-wrapper"
+            >
+              <span>
+                Promotion Code: 
+                
+                  
+              </span>
+              <span>
+                Total Price: 
+                0.00
+                  
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
