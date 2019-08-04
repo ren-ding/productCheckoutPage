@@ -1,4 +1,4 @@
-Nintex product checkout page
+Product checkout page
 ===================
 
 Description
